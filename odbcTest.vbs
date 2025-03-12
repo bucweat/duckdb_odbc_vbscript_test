@@ -298,7 +298,7 @@ class classOdbcTests
     '********************************************
     public function pragmas
         REM https://duckdb.org/docs/configuration/pragmas
-        logResult query2csv( "SET log_query_path = 'C:\Users\charlie\Desktop\duck.log';" )
+        logResult query2csv( "SET log_query_path = '.\duck.log';" )
         
         logResult query2csv( "PRAGMA database_list;" )
         logResult query2csv( "PRAGMA database_size;" )
