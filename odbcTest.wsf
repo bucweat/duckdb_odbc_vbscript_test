@@ -1,0 +1,26 @@
+<!-- $Id$ -->
+<package>
+<job>
+
+<script language = "VBScript" src="odbcTest.vbs"></script>
+
+<script language = "VBScript">
+
+    dim oClassOdbcTests: set oClassOdbcTests = new classOdbcTests
+    
+    if WScript.Arguments.count <> 1 then
+        wscript.echo "script requires you provide 32 or 64"
+    else
+        iBitness = clng(WScript.Arguments(0))
+        sBitPath = "32bit"
+        if iBitness = 64 then sBitPath = "64bit"
+    end if
+    
+    oClassOdbcTests.executeTests iBitness
+    
+    set oClassOdbcTests = nothing
+    
+</script>
+
+</job>
+</package>
